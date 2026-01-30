@@ -1,12 +1,12 @@
 ---
-title: "SDS 264: Data Science 2 (Spring 2025)"
+title: "SDS 264: Data Science 2 (Spring 2026)"
 sidebar: false
 ---
 
-::: {layout-ncol=2}
-![Quarto](images/quarto.png){width=200}
+::: {layout-nrow=2}
+![](images/rstudio-stickers.jpg){width=75%}
 
-![tidyverse](images/tidyverse.png){width=200}
+![](images/GitHub-Logo.png){width=150}
 :::
 
 
@@ -15,5 +15,5 @@ sidebar: false
 - [Course syllabus](https://docs.google.com/document/d/1pYegIaSU8RQU_7LX-XsxUMueVv5CJoe5dwPoJs0v9TE/edit?usp=sharing)
 - [RStudio server](https://r.stolaf.edu)
 - [moodle](https://mdl.stolaf.edu/login/index.php)
-- [GitHub source code for this website](https://github.com/joeroith/264_spring_2025)
+- [GitHub source code for this website](https://github.com/joeroith/264_spring_26)
 
