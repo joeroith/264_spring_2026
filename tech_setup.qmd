@@ -12,7 +12,7 @@ Ideally before class on Thurs Feb 5, and definitely before class on Tues Feb 10,
 - **FIRST:** Download R [here](https://cran.rstudio.com/).
     - In the top section, you will see three links "Download R for ..."
     - Choose the link that corresponds to your computer.
-    - As of the start of this semester, the latest version of R is 4.4.3 (“Trophy Case”).
+    - As of the start of this semester, the latest version of R is 4.5.2 (“[Not] Part in a Rumble”).
 - **SECOND:** Download RStudio [here](https://posit.co/download/rstudio-desktop/#download).
     - Click the button under step 2 to install the version of RStudio recommended for your computer.
     - As of the start of this semester, the latest version of RStudio is 2026.01.0 (Build 392).
