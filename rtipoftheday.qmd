@@ -3,7 +3,7 @@ title: "R Tip of the Day"
 sidebar: false
 ---
   
-[Signup Sheet](https://docs.google.com/spreadsheets/d/1TXtECPHo-tuwEHmoOHzaJA7clLAPMKNg4mX0waqmvZg/edit?usp=sharing)
+[Signup Sheet](https://docs.google.com/spreadsheets/d/1TebVNfRPruLLuqTiIb1EDp2jhyvkom5shrEPzbJkXhg/edit?usp=sharing)
 
 [How to create cool presentations using Quarto](https://rconnect.stolaf.edu/content/68441b10-fe0d-409f-9807-0464b35a6120)
 

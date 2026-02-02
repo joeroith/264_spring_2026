@@ -3,7 +3,7 @@ title: "Tech Setup"
 sidebar: false
 ---
 
-Ideally before class on Thurs Feb 6, and definitely before class on Tues Feb 11, you should follow these instructions to set up the software that we'll be using throughout the semester. **Even if you've already downloaded both R and RStudio, you'll want to re-download to make sure that you have the most current versions.**
+Ideally before class on Thurs Feb 5, and definitely before class on Tues Feb 10, you should follow these instructions to set up the software that we'll be using throughout the semester. **Even if you've already downloaded both R and RStudio, you'll want to re-download to make sure that you have the most current versions.**
 
 <br>
 

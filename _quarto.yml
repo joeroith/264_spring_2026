@@ -23,9 +23,11 @@ website:
     left:
       - file: index.qmd
         text: "Home"
+      - file: syllabus_s26.qmd
+        text: "Syllabus"
       - sidebar:tech_notes
       - sidebar:activities
-      - sidebar:projects
+      #- sidebar:projects
       - file: rtipoftheday.qmd
         text: "R Tip of the Day"
 
@@ -36,18 +38,13 @@ website:
         - tech_setup.qmd
         - why_quarto.qmd
         - github_intro.qmd
-        - github_links.qmd
 
     - id: activities
       title: "Activities"
       contents:
         - 01_review164.qmd
 
-        
-    - id: projects
-      title: "Projects"
-      contents:
-        - miniproject1.qmd
+
 
 
   page-footer:

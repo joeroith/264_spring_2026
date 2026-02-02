@@ -12,8 +12,8 @@ sidebar: false
 
 # Key links for SDS 264
 
-- [Course syllabus](https://docs.google.com/document/d/1pYegIaSU8RQU_7LX-XsxUMueVv5CJoe5dwPoJs0v9TE/edit?usp=sharing)
+- [Course schedule](https://docs.google.com/spreadsheets/d/1kTV195US2WPwdouWuWQIwjCbGIA0i_JvH_KeOWYlvmU/edit?usp=sharing)
 - [RStudio server](https://r.stolaf.edu)
 - [moodle](https://mdl.stolaf.edu/login/index.php)
-- [GitHub source code for this website](https://github.com/joeroith/264_spring_26)
+- [GitHub source code for this website](https://github.com/joeroith/264_spring_2026)
 

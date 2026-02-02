@@ -90,3 +90,13 @@ Before you start a new session of working on a project in RStudio, you should al
 ### A bit more about R projects
 
 11. To see the power of projects, select File > Close Project and Don't Save the workspace image.  Then, select File > Recent Projects > SDS264_S25; you will get a clean Environment and Console once again, but History shows the commands you ran by hand, active Rmd and qmd files appear in the Source panel, and Files contains the Rmd, qmd, html, and csv files produced by your last session.  And you can stage, commit and push the changes and the new file to GitHub!
+
+### A few additional GitHub links that I've found helpful:
+
+- [Using git and GitHub with RStudio (Lisa Lendway)](https://www.youtube.com/watch?v=QLFc9gw_Hfs)
+
+- [GitHub with R projects (Lisa Lendway)](https://www.youtube.com/watch?v=OduNU4vZ7IM)
+
+- [GitHub starter course – basic terminology](https://github.com/classroom-resources/github-starter-course)
+
+- [Happy Git and GitHub for the useR (Jenny Bryan)](https://happygitwithr.com/)
