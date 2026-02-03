@@ -20,7 +20,7 @@ vaccine_data <- read_csv("https://joeroith.github.io/264_spring_2025/Data/vaccin
 
 First, a little detour to describe several alternatives for reading in data:
 
-If you navigate to [my Github account](https://github.com/joeroith), and find the `264_spring_2025` repo, there is a Data folder inside.  You can then click on `vacc_Mar21.csv` to see the data we want to download.   [This link](https://github.com/joeroith/264_spring_2025/blob/main/Data/vaccinations_2021.csv) should also get you there, but it's good to be able to navigate there yourself.
+If you navigate to [my Github account](https://github.com/joeroith), and find the `264_spring_2026` repo, there is a Data folder inside.  You can then click on `vacc_Mar21.csv` to see the data we want to download.   [This link](https://github.com/joeroith/264_spring_2026/blob/main/Data/vaccinations_2021.csv) should also get you there, but it's good to be able to navigate there yourself.
 
 
 ```{r}
