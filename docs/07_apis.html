@@ -473,38 +473,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 [[2]]
 [[2]][[1]]
-[1] "Mississippi"
+[1] "Illinois"
 
 [[2]][[2]]
-NULL
+[1] "655"
 
 [[2]][[3]]
-NULL
+[1] "511"
 
 [[2]][[4]]
-[1] "28"</code></pre>
+[1] "17"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>resp_json_df <span class="ot">&lt;-</span> resp <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>(<span class="at">simplifyVector =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(resp_json_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     [,1]          [,2]          [,3]          [,4]   
-[1,] "NAME"        "B02015_009E" "B02015_009M" "state"
-[2,] "Mississippi" NA            NA            "28"   
-[3,] "Missouri"    "953"         "1141"        "29"   
-[4,] "Montana"     NA            NA            "30"   
-[5,] "Nebraska"    "412"         "477"         "31"   
-[6,] "Nevada"      "863"         "745"         "32"   </code></pre>
+<pre><code>     [,1]       [,2]          [,3]          [,4]   
+[1,] "NAME"     "B02015_009E" "B02015_009M" "state"
+[2,] "Illinois" "655"         "511"         "17"   
+[3,] "Georgia"  "3162"        "1336"        "13"   
+[4,] "Idaho"    NA            NA            "16"   
+[5,] "Hawaii"   "56"          "92"          "15"   
+[6,] "Indiana"  "1344"        "1198"        "18"   </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>resp_json_df <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">row_to_names</span>(resp_json_df, <span class="dv">1</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(resp_json_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     NAME            B02015_009E B02015_009M state
-[1,] "Mississippi"   NA          NA          "28" 
-[2,] "Missouri"      "953"       "1141"      "29" 
-[3,] "Montana"       NA          NA          "30" 
-[4,] "Nebraska"      "412"       "477"       "31" 
-[5,] "Nevada"        "863"       "745"       "32" 
-[6,] "New Hampshire" NA          NA          "33" </code></pre>
+<pre><code>     NAME       B02015_009E B02015_009M state
+[1,] "Illinois" "655"       "511"       "17" 
+[2,] "Georgia"  "3162"      "1336"      "13" 
+[3,] "Idaho"    NA          NA          "16" 
+[4,] "Hawaii"   "56"        "92"        "15" 
+[5,] "Indiana"  "1344"      "1198"      "18" 
+[6,] "Iowa"     "685"       "705"       "19" </code></pre>
 </div>
 </div>
 <p>All right, let’s try this! First we’ll grab total population and median household income for all census tracts in MN using 3 approaches</p>
