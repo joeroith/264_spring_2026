@@ -30,7 +30,7 @@ editor:
 
 -   Thursdays: by appointment/anytime my door is open
 
--   Fridays: by appointment ([virtual](https://stolaf.zoom.us/meetings/9746004561/invitations?signature=ZerOIzTKigpsWl0Wpo_sYwILsWzpjDBrfyxVDqGEwsI))
+-   Fridays: by appointment ([virtual](https://stolaf.zoom.us/j/9746004561?pwd=sbvbTI9woPF8GfSQ53zwKVuJz5UHz3.1))
 
 
 Additional appointments outside of these times may be made by emailing
@@ -321,7 +321,8 @@ questions, there are several resources:
     for study groups, visiting TA help clinics, visiting my office
     hours, etc.\
 
--   TA Help Clinics: (TBD) These sessions provide a place to drop by
+-   TA Help Clinics: Mondays 7:30-8:30pm and Tuesdays 8:30-9:30pm in RNS 160R. 
+    These sessions provide a place to drop by
     with questions on homework, projects, or class material. You can
     come with specific questions or just come to sit and work alone or
     with classmates, knowing that help is nearby if questions arise.
