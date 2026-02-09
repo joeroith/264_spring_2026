@@ -53,7 +53,7 @@ Here is an illustration ([source](https://www.nobledesktop.com/learn/git/stage-c
 
 ### Creating new files in RStudio (local)
 
-6. You can download our first file with in-class exercises [here](https://github.com/joeroith/264_spring_2025/blob/main/01_review164.qmd).  Just hit the Download Raw File button and note where the file is saved on your computer.  Use File > Open File in RStudio to open up `01_review164.qmd`.  Then, use File > Save As to navigate to the SDS264_S26 folder on your computer and save a copy there.  You can even add your name or a few answers and re-save your file.
+6. You can download our first file with in-class exercises [here](https://github.com/joeroith/264_spring_2026/blob/main/01_review164.qmd).  Just hit the Download Raw File button and note where the file is saved on your computer.  Use File > Open File in RStudio to open up `01_review164.qmd`.  Then, use File > Save As to navigate to the SDS264_S26 folder on your computer and save a copy there.  You can even add your name or a few answers and re-save your file.
 
 
 ### Making sure the connection to GitHub is ready
