@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -179,10 +179,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_strings_part1.html">Strings: In-class Exercises (Part 1)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_review164.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Review of Data Science 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_strings_part1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Strings: In-class Exercises (Part 1)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -239,12 +272,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>You can download this .qmd file from <a href="https://github.com/joeroith/264_spring_2025/blob/main/10_strings_part1.qmd">here</a>. Just hit the Download Raw File button.</p>
+<p>You can download this .qmd file from <a href="https://github.com/joeroith/264_spring_2026/blob/main/02_strings_part1.qmd">here</a>. Just hit the Download Raw File button.</p>
+<p>You can also see a video walkthrough of the first half of this worksheet <a href="https://stolaf.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dcdf1e3a-1f38-4686-87d6-b3ec00fca599">here</a></p>
 <p>This uses parts of R4DS Ch 14: Strings and Ch 15: Regular Expressions (both the first and second editions).</p>
+<p>This dataset comes from the Tidy Tuesday community, <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-01-21/readme.md">more details can be found here.</a></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#spotify &lt;- read_csv("Data/spotify.csv") </span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>spotify <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://joeroith.github.io/264_spring_2025/Data/spotify.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>spotify <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://joeroith.github.io/264_spring_2026/Data/spotify.csv"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>spot_smaller <span class="ot">&lt;-</span> spotify <span class="sc">|&gt;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
@@ -327,6 +362,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="functions-that-start-str_-do-stuff-to-strings" class="level2">
 <h2 class="anchored" data-anchor-id="functions-that-start-str_-do-stuff-to-strings">Functions that start str_ do stuff to strings!</h2>
+<blockquote class="blockquote">
+<p>Fun Fact: The <code>stringr</code> library in <code>tidyverse</code> holds all of the functions for working with strings.</p>
+</blockquote>
 <section id="str_length" class="level3">
 <h3 class="anchored" data-anchor-id="str_length">str_length()</h3>
 <div class="cell">
@@ -400,21 +438,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>How can we use str_sub to get just the year of the album_release_date? Try it here! Then scroll down for solution.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>spot_smaller</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>spot_smaller <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">release_year =</span> <span class="fu">str_sub</span>(album_release_date, <span class="dv">1</span>, <span class="dv">4</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title, album_release_date, release_year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 6
-   title             artist album_release_date album_name subgenre playlist_name
-   &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;              &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;        
- 1 Hear Me Now       Alok   2016-01-01         Hear Me N… indie p… "Chillout &amp; …
- 2 Run the World (G… Beyon… 2011-06-24         4          post-te… "post-teen a…
- 3 Formation         Beyon… 2016-04-23         Lemonade   hip pop  "Feeling Acc…
- 4 7/11              Beyon… 2014-11-24         BEYONCÉ [… hip pop  "Feeling Acc…
- 5 My Oh My (feat. … Camil… 2019-12-06         Romance    latin p… "2020 Hits &amp;…
- 6 It's Automatic    Frees… 2013-11-28         It's Auto… latin h… "80's Freest…
- 7 Poetic Justice    Kendr… 2012               good kid,… hip hop  "Hip Hop Con…
- 8 A.D.H.D           Kendr… 2011-07-02         Section.80 souther… "Hip-Hop 'n …
- 9 Ya Estuvo         Kid F… 1990-01-01         Hispanic … latin h… "HIP-HOP: La…
-10 Runnin (with A$A… Mike … 2018-11-16         Creed II:… gangste… "RAP Gangsta"</code></pre>
+<pre><code># A tibble: 10 × 3
+   title                                         album_release_date release_year
+   &lt;chr&gt;                                         &lt;chr&gt;              &lt;chr&gt;       
+ 1 Hear Me Now                                   2016-01-01         2016        
+ 2 Run the World (Girls)                         2011-06-24         2011        
+ 3 Formation                                     2016-04-23         2016        
+ 4 7/11                                          2014-11-24         2014        
+ 5 My Oh My (feat. DaBaby)                       2019-12-06         2019        
+ 6 It's Automatic                                2013-11-28         2013        
+ 7 Poetic Justice                                2012               2012        
+ 8 A.D.H.D                                       2011-07-02         2011        
+ 9 Ya Estuvo                                     1990-01-01         1990        
+10 Runnin (with A$AP Rocky, A$AP Ferg &amp; Nicki M… 2018-11-16         2018        </code></pre>
 </div>
 </div>
 <p>. . . . . . . .</p>
@@ -461,11 +501,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4509842</code></pre>
+<pre><code>[1] 0.3163096</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">"I can put other values, like"</span>, x, <span class="st">"in here!"</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "I can put other values, like 0.450984213966876 in here!"</code></pre>
+<pre><code>[1] "I can put other values, like 0.316309551242739 in here!"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>spot_smaller</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -736,12 +776,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 10 Runnin (with A$AP Rocky, A$AP Ferg &amp; Nicki Minaj) Mike Wi… Creed II:… &lt;NA&gt;   </code></pre>
 </div>
 </div>
-<p>The patterns we show here, “\d” and “[aeiou]” are called regular expressions.</p>
+<p>The patterns we show here, <code>\\d</code> and <code>[aeiou]</code> are called regular expressions.</p>
 </section>
 </section>
 <section id="regular-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
-<p><em>Regular expressions</em> are a way to write general patterns… for instance the string “\d” will find any digit (number). We can also specify whether we want the string to start or end with a certain letter.</p>
+<p><em>Regular expressions</em> are a way to write general patterns… for instance the string <code>\\d</code> will find any digit (number). We can also specify whether we want the string to start or end with a certain letter.</p>
 <p>Notice the difference between the regular expression “M” and “^M”, “o” and “o$”</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(spot_smaller<span class="sc">$</span>title, <span class="st">"M"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -769,7 +809,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[9] │ Ya Estuv&lt;o&gt;</code></pre>
 </div>
 </div>
-<p>But how do I look for a dollar sign in my string? I use &nbsp;to “escape” the special behavior of <code>$</code>. But &nbsp;itself has special behavior… so I need two of them.</p>
+<p>But how do I look for a dollar sign in my string? I use <code>\</code> to “escape” the special behavior of <code>$</code>. But <code>\</code> itself has special behavior… so I need two of them.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(spot_smaller<span class="sc">$</span>title, <span class="st">"</span><span class="sc">\\</span><span class="st">$"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -809,7 +849,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="more-regular-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="more-regular-expressions">More regular expressions</h2>
-<p>[abc] - a, b, or c</p>
+<p><code>[abc]</code> - a, b, or c</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(spot_smaller<span class="sc">$</span>subgenre, <span class="st">"[hp]op"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -833,7 +873,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [9] │ latin &lt;hip hop&gt;</code></pre>
 </div>
 </div>
-<p>[^abc] anything EXCEPT abc.</p>
+<p><code>[^abc]</code> anything EXCEPT abc.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(spot_smaller<span class="sc">$</span>album_name, <span class="st">"[^</span><span class="sc">\\</span><span class="st">d]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -857,6 +897,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [10] │ Creed II&lt;:&gt; The Album</code></pre>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>See what I did with the dash (“-”) here? Also notice the negating <code>^</code> applies to any of the following characters (including the space).</p>
+</blockquote>
 </section>
 <section id="bonus-content-not-in-the-pre-class-video" class="level2">
 <h2 class="anchored" data-anchor-id="bonus-content-not-in-the-pre-class-video">Bonus content not in the pre-class video</h2>

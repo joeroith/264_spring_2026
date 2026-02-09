@@ -43,6 +43,7 @@ website:
       title: "Activities"
       contents:
         - 01_review164.qmd
+        - 02_strings_part1.qmd
 
 
 
