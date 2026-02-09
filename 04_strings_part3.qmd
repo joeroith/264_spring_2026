@@ -6,7 +6,7 @@ editor_options:
   chunk_output_type: console
 ---
   
-You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2025/blob/main/12_strings_part3.qmd).  Just hit the Download Raw File button.
+You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2026/blob/main/04_strings_part3.qmd).  Just hit the Download Raw File button.
 
 ```{r}
 #| message: false
@@ -23,10 +23,10 @@ library(httr)
 1. Describe the equivalents of ?, +, * in {m,n} form.
 
 
-2. Describe, in words, what the expression "(.)(.)\\2\\1" will match, and provide a word or expression as an example.
+2. Describe, in words, what the expression `"(.)(.)\\2\\1"` will match, and provide a word or expression as an example.
 
 
-3. Produce an R string which the regular expression represented by "\\..\\..\\.." matches.  In other words, find a string `y` below that produces a TRUE in `str_detect`.
+3. Produce an R string which the regular expression represented by `"\\..\\..\\.."` matches.  In other words, find a string `y` below that produces a TRUE in `str_detect`.
 
 
 4. Solve with `str_subset()`, using the words from `stringr::words`:
@@ -55,7 +55,7 @@ as_tibble(words) |>
 ```
 
 
-## Coco and Rotten Tomatoes
+## Coco and Rotten Tomatoes (Skip for now)
 
 We will check out the Rotten Tomatoes page for the 2017 movie Coco, scrape information from that page (we'll get into web scraping in a few weeks!), clean it up into a usable format, and answer some questions using strings and regular expressions.
 
