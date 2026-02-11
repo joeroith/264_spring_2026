@@ -15,7 +15,7 @@ You can download this .qmd file from [here](https://github.com/joeroith/264_spri
 #| include: false
 
 library(tidyverse)
-vaccine_data <- read_csv("https://joeroith.github.io/264_spring_2025/Data/vaccinations_2021.csv")
+vaccine_data <- read_csv("https://joeroith.github.io/264_spring_2026/Data/vaccinations_2021.csv")
 ```
 
 First, a little detour to describe several alternatives for reading in data:
