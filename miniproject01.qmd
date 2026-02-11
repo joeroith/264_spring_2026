@@ -61,9 +61,9 @@ library(tidyverse)
 #| message: false
 
 #barack <- read_csv("Data/tweets_potus.csv") 
-barack <- read_csv("https://proback.github.io/264_fall_2025/Data/tweets_potus.csv")
+barack <- read_csv("https://joeroith.github.io/264_spring_2026/Data/tweets_potus.csv")
 #michelle <- read_csv("Data/tweets_flotus.csv") 
-michelle <- read_csv("https://proback.github.io/264_fall_2025/Data/tweets_flotus.csv")
+michelle <- read_csv("https://joeroith.github.io/264_spring_2026/Data/tweets_flotus.csv")
 
 tweets <- bind_rows(barack |> 
                       mutate(person = "Barack"),
