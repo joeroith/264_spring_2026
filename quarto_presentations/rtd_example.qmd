@@ -2,7 +2,7 @@
 title: "R Tip of the Day Example"
 subtitle: "The gganimate package"
 author: "Joe Roith"
-date: "February 25, 2025"
+date: "February, 2026"
 format:
   revealjs: 
     slide-number: true
@@ -196,7 +196,7 @@ Learn more: [Line Highlighting](https://quarto.org/docs/presentations/revealjs/#
 
 ```{r}
 gapminder |>
-  ggplot(aes(x = lifeExp, y = continent, fill = continent)) +
+  ggplot(aes(x = lifeExp, y = continent)) +
   geom_density_ridges(show.legend = FALSE, alpha = 0.5) +
   labs(
     title = "Life Expectancy by Continent",
