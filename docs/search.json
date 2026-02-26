@@ -61,7 +61,7 @@
     "href": "miniproject01.html#timeline",
     "title": "Mini-Project 1: Text Analysis",
     "section": "Timeline",
-    "text": "Timeline\nMini-Project 1 must be submitted on Moodle by 11:00 PM on Wed Mar 4.\nYou should have the following in your GitHub repo:\n\\(\\Box\\) the dataset you used as .csv or .txt file (even if your data is from an R package save a version of it as a csv, you can use the write_csv() function or see me for help doing this)\n\\(\\Box\\) clearly named qmd file with all code, well commented\n\\(\\Box\\) Rendered pdf, with a title and author at the top, you should suppress all messages and warnings, but you may have code visible in the pdf.",
+    "text": "Timeline\nMini-Project 1 must be submitted on Moodle by 11:00 PM on FRIDAY Mar 6.\nYou should have the following in your GitHub repo:\n\\(\\Box\\) the dataset you used as .csv or .txt file (even if your data is from an R package save a version of it as a csv, you can use the write_csv() function or see me for help doing this)\n\\(\\Box\\) clearly named qmd file with all code, well commented\n\\(\\Box\\) Rendered pdf, with a title and author at the top, you should suppress all messages and warnings, but you may have code visible in the pdf.",
     "crumbs": [
       "Mini-Project 1: Text Analysis"
     ]
