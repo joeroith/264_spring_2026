@@ -187,6 +187,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./06_data_types.html">
  <span class="dropdown-text">Data types</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./07_functions.html">
+ <span class="dropdown-text">Functions and tidy evaluation</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -271,6 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./06_data_types.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data types</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions and tidy evaluation</span></a>
   </div>
 </li>
     </ul>
@@ -400,9 +410,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] 1 1 0 0 0 1 1 0 1 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 1 1 0 1 1 1 1 0 1 0 0
- [38] 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1
- [75] 0 0 1 1 0 1 1 1 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 0 1 1</code></pre>
+<pre><code>  [1] 1 0 0 0 0 1 0 1 0 1 1 0 1 1 0 1 1 1 0 1 1 0 0 1 0 1 1 0 1 1 0 1 0 1 0 0 0
+ [38] 1 1 1 0 1 0 0 0 0 0 1 0 1 0 0 1 1 1 1 1 0 1 0 1 1 1 1 0 0 1 1 1 0 0 1 1 0
+ [75] 0 0 1 1 1 0 1 1 1 0 0 1 1 1 1 1 1 0 0 0 0 1 1 0 0 1</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(y)  <span class="co"># how many are greater than 10?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1363,7 +1373,7 @@ F-statistic:  2459 on 1 and 232 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x, ...) 
 UseMethod("mean")
-&lt;bytecode: 0x00000170e6b08f90&gt;
+&lt;bytecode: 0x0000021221b04f90&gt;
 &lt;environment: namespace:base&gt;</code></pre>
 </div>
 </div>
