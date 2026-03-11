@@ -16,9 +16,9 @@ I will form pairs with input from you (partner preference survey)
 
 |              |                      | Tentative due date | Points |
 |--------------|----------------------|--------------------|--------|
-| **Stage I**  | Project Proposal     | Fri, Mar 27        | 10     |
-| **Stage II** | GitHub Collaboration | Thurs, Apr 9       | 10     |
-| **Stage III**| Project Submission   | Friday, Apr 17     | 80     |
+| **Stage I**  | Project Proposal     | Mon, Mar 23        | 10     |
+| **Stage II** | GitHub Collaboration | Fri, Mar 27        | 10     |
+| **Stage III**| Project Submission   | Sun, Apr 12        | 80     |
 |              |                      |                    | 100    |
 
 
@@ -64,6 +64,6 @@ $\Box$ at least one .csv file (formed using `write_csv()`) containing data you h
 ### Submission and Rubric
 
 
-Mini-Project 2 must be submitted on Moodle by **11:00 PM on Fri, Apr 17**. You should submit a rendered pdf.
+Mini-Project 2 must be submitted on Moodle by **11:00 PM on Sunday, Apr 12**. You should submit a rendered pdf.
 
 Check out this [rubric](https://drive.google.com/file/d/1_4n6xn41_5cmZSczn1muvkZsXlwyBoNr/view?usp=sharing) for Mini-Project 2.
