@@ -8,7 +8,7 @@ editor_options:
 
 Based on Chapter 25 from *R for Data Science*
 
-You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2026/blob/main/03_functions.qmd).  Just hit the Download Raw File button.
+You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2026/blob/main/07_functions.qmd).  Just hit the Download Raw File button.
 
 ### Introduction (from Ch 25 of R4DS)
 
