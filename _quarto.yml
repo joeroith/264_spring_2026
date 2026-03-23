@@ -51,6 +51,7 @@ website:
         - 06_data_types.qmd
         - 07_functions.qmd
         - 08_iteration.qmd
+        - 09_table_scraping.qmd
         
     - id: projects
       title: "Projects"
