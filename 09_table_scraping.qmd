@@ -121,12 +121,7 @@ bind_cols(mpls_data1, mpls_data2) |>
 
 ### On Your Own
 
-1. In 12_maps.qmd we will see how to create an interactive U.S. map showing population densities by state.  Right now, let's see if we can use our new web scraping skills to scrape the correct population density data and create a tidy data frame!
-
-A quick wikipedia search yields [this webpage](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density) with population densities in a nice table format.  Use our 4 steps to `rvest`ing data to acquire the data, and then create a tidy tibble with one row per state.
-
-
-2. Use the `rvest` package and `html_table` to read in the table of data found at the link [here](https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population) and create a scatterplot of land area versus the 2024 estimated population.  I give you some starter code below; fill in the "???" and be sure you can explain what EVERY line of code does and why it's necessary.
+1. Use the `rvest` package and `html_table` to read in the table of data found at the link [here](https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population) and create a scatterplot of land area versus the 2024 estimated population.  I give you some starter code below; fill in the "???" and be sure you can explain what EVERY line of code does and why it's necessary.
 
 ```{r}
 #| eval: FALSE
@@ -157,7 +152,7 @@ pop3 <- as_tibble(pop2[,c(1:6,8)]) |>
          `Density` = `2020 density`) |>
   mutate(Estimate2024 = parse_number(Estimate2024),
          Census = parse_number(Census),
-         Change = ???   # get rid of % but preserve +/-,
+         #Change = ???   # get rid of % but preserve +/- (optional),
          Area = parse_number(Area),
          Density = parse_number(Density)) |> 
   mutate(City = str_replace(City, "\\[.*$", ""))
@@ -174,6 +169,13 @@ ggplot(pop3, aes(x = ???, y = ???)) +
   geom_smooth() +
   ggrepel::geom_label_repel(data = ???, aes(label = ???))
 ```
+
+
+2. In 12_maps.qmd we will see how to create an interactive U.S. map showing population densities by state.  Right now, let's see if we can use our new web scraping skills to scrape the correct population density data and create a tidy data frame!
+
+A quick wikipedia search yields [this webpage](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density) with population densities in a nice table format.  Use our 4 steps to `rvest`ing data to acquire the data, and then create a tidy tibble with one row per state.
+
+
 
 
 3. We would like to create a tibble with 4 years of data (2001-2004) from the Minnesota Wild hockey team.  Specifically, we are interested in the "Scoring Regular Season" table from [this webpage](https://www.hockey-reference.com/teams/MIN/2001.html) and the similar webpages from 2002, 2003, and 2004.  Your final tibble should have 6 columns:  player, year, age, pos (position), gp (games played), and pts (points).

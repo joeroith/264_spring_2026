@@ -511,9 +511,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # A tibble: 6 × 3
   ``          ``                ``   
   &lt;chr&gt;       &lt;chr&gt;             &lt;lgl&gt;
-1 Local Time  11:01 AM          NA   
-2 Sunrise     07:08 AM          NA   
-3 Sunset      07:30 PM          NA   
+1 Local Time  08:37 AM          NA   
+2 Sunrise     07:06 AM          NA   
+3 Sunset      07:32 PM          NA   
 4 Day/Night   Day               NA   
 5 Timezone    Chicago -6:00     NA   
 6 Timezone DB America - Chicago NA   
@@ -604,10 +604,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="on-your-own" class="level3">
 <h3 class="anchored" data-anchor-id="on-your-own">On Your Own</h3>
 <ol type="1">
-<li>In 12_maps.qmd we will see how to create an interactive U.S. map showing population densities by state. Right now, let’s see if we can use our new web scraping skills to scrape the correct population density data and create a tidy data frame!</li>
-</ol>
-<p>A quick wikipedia search yields <a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density">this webpage</a> with population densities in a nice table format. Use our 4 steps to <code>rvest</code>ing data to acquire the data, and then create a tidy tibble with one row per state.</p>
-<ol start="2" type="1">
 <li>Use the <code>rvest</code> package and <code>html_table</code> to read in the table of data found at the link <a href="https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population">here</a> and create a scatterplot of land area versus the 2024 estimated population. I give you some starter code below; fill in the “???” and be sure you can explain what EVERY line of code does and why it’s necessary.</li>
 </ol>
 <div class="cell">
@@ -637,7 +633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Density</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">2020 density</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
 <span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimate2024 =</span> <span class="fu">parse_number</span>(Estimate2024),</span>
 <span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">Census =</span> <span class="fu">parse_number</span>(Census),</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">Change =</span> ???   <span class="co"># get rid of % but preserve +/-,</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>         <span class="co">#Change = ???   # get rid of % but preserve +/- (optional),</span></span>
 <span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>         <span class="at">Area =</span> <span class="fu">parse_number</span>(Area),</span>
 <span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>         <span class="at">Density =</span> <span class="fu">parse_number</span>(Density)) <span class="sc">|&gt;</span> </span>
 <span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">City =</span> <span class="fu">str_replace</span>(City, <span class="st">"</span><span class="sc">\\</span><span class="st">[.*$"</span>, <span class="st">""</span>))</span>
@@ -654,6 +650,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
 <span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>  ggrepel<span class="sc">::</span><span class="fu">geom_label_repel</span>(<span class="at">data =</span> ???, <span class="fu">aes</span>(<span class="at">label =</span> ???))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<ol start="2" type="1">
+<li>In 12_maps.qmd we will see how to create an interactive U.S. map showing population densities by state. Right now, let’s see if we can use our new web scraping skills to scrape the correct population density data and create a tidy data frame!</li>
+</ol>
+<p>A quick wikipedia search yields <a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density">this webpage</a> with population densities in a nice table format. Use our 4 steps to <code>rvest</code>ing data to acquire the data, and then create a tidy tibble with one row per state.</p>
 <ol start="3" type="1">
 <li>We would like to create a tibble with 4 years of data (2001-2004) from the Minnesota Wild hockey team. Specifically, we are interested in the “Scoring Regular Season” table from <a href="https://www.hockey-reference.com/teams/MIN/2001.html">this webpage</a> and the similar webpages from 2002, 2003, and 2004. Your final tibble should have 6 columns: player, year, age, pos (position), gp (games played), and pts (points).</li>
 </ol>
