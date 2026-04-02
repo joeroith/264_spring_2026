@@ -60,6 +60,7 @@ website:
       contents:
         - miniproject01.qmd
         - miniproject2.qmd
+        - miniproject03.qmd
 
 
   page-footer:
