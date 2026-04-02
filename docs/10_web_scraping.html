@@ -203,6 +203,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./10_web_scraping.html">
  <span class="dropdown-text">Web Scraping in R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./11_apis.html">
+ <span class="dropdown-text">Data Acquisition with APIs in R</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -315,6 +319,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./10_web_scraping.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Web Scraping in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_apis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Acquisition with APIs in R</span></a>
   </div>
 </li>
     </ul>
@@ -469,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="retrieving-data-using-rvest-and-css-selectors" class="level3">
 <h3 class="anchored" data-anchor-id="retrieving-data-using-rvest-and-css-selectors">Retrieving Data Using <code>rvest</code> and CSS Selectors</h3>
-<p>Now that we have identified CSS selectors for the information we need, let’s fetch the data using the <code>rvest</code> package similarly to our approach in <code>10_table_scraping.qmd</code>.</p>
+<p>Now that we have identified CSS selectors for the information we need, let’s fetch the data using the <code>rvest</code> package similarly to our approach in <code>09_table_scraping.qmd</code>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check that scraping is allowed (Step 0)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>robotstxt<span class="sc">::</span><span class="fu">paths_allowed</span>(<span class="st">"https://www.nih.gov/news-events/news-releases"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -490,16 +500,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>title_temp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{xml_nodeset (10)}
- [1] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH&nbsp;invests $150 million in human- ...
- [2] &lt;h3 class="thumbnail-teaser__heading"&gt;Clinical trial results support use ...
- [3] &lt;h3 class="thumbnail-teaser__heading"&gt;Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;pre ...
- [4] &lt;h3 class="thumbnail-teaser__heading"&gt;Automated CT scan analysis could f ...
- [5] &lt;h3 class="thumbnail-teaser__heading"&gt;Study measuring changes in protein ...
- [6] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH-supported trial reduces&nbsp;HIV&nbsp;in ...
- [7] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH halts arm of clinical trial ev ...
- [8] &lt;h3 class="thumbnail-teaser__heading"&gt;Cognitive speed training over week ...
- [9] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH scientists develop "digital tw ...
-[10] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH opens East Palestine Health Re ...</code></pre>
+ [1] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH researchers&nbsp;discover&nbsp;pain-reli ...
+ [2] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH awards&nbsp;top&nbsp;scientific teams fo ...
+ [3] &lt;h3 class="thumbnail-teaser__heading"&gt;Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH  ...
+ [4] &lt;h3 class="thumbnail-teaser__heading"&gt;Chronic inflammation leaves long-l ...
+ [5] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH&nbsp;invests $150 million in human- ...
+ [6] &lt;h3 class="thumbnail-teaser__heading"&gt;Clinical trial results support use ...
+ [7] &lt;h3 class="thumbnail-teaser__heading"&gt;Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;pre ...
+ [8] &lt;h3 class="thumbnail-teaser__heading"&gt;Automated CT scan analysis could f ...
+ [9] &lt;h3 class="thumbnail-teaser__heading"&gt;Study measuring changes in protein ...
+[10] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH-supported trial reduces&nbsp;HIV&nbsp;in ...</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Extract content from nodes with html_text(), html_name(), </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    html_attrs(), html_children(), html_table(), etc.</span></span>
@@ -507,16 +517,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>title_vec <span class="ot">&lt;-</span> <span class="fu">html_text</span>(title_temp)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>title_vec</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [2] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [3] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
- [4] "Automated CT scan analysis could fast-track clinical assessments "                                                                
- [5] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
- [6] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            
- [7] "NIH halts arm of clinical trial evaluating a potential stroke treatment"                                                          
- [8] "Cognitive speed training over weeks may delay the diagnosis of dementia over decades "                                            
- [9] "NIH scientists develop \"digital twin\" of eye cells to understand and treat age-related macular degeneration"                    
-[10] "NIH opens East Palestine Health Research Office to study train disaster"                                                          </code></pre>
+<pre><code> [1] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
+ [2] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
+ [3] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
+ [4] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
+ [5] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
+ [6] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
+ [7] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
+ [8] "Automated CT scan analysis could fast-track clinical assessments "                                                                
+ [9] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
+[10] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            </code></pre>
 </div>
 </div>
 <p>You can also write this all together with a pipe:</p>
@@ -533,16 +543,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_nodes</span>(<span class="st">".thumbnail-teaser__heading"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [2] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [3] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
- [4] "Automated CT scan analysis could fast-track clinical assessments "                                                                
- [5] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
- [6] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            
- [7] "NIH halts arm of clinical trial evaluating a potential stroke treatment"                                                          
- [8] "Cognitive speed training over weeks may delay the diagnosis of dementia over decades "                                            
- [9] "NIH scientists develop \"digital twin\" of eye cells to understand and treat age-related macular degeneration"                    
-[10] "NIH opens East Palestine Health Research Office to study train disaster"                                                          </code></pre>
+<pre><code> [1] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
+ [2] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
+ [3] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
+ [4] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
+ [5] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
+ [6] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
+ [7] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
+ [8] "Automated CT scan analysis could fast-track clinical assessments "                                                                
+ [9] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
+[10] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            </code></pre>
 </div>
 </div>
 <p>And finally we wrap the 4 steps above into the <code>bow</code> and <code>scrape</code> functions from the <code>polite</code> package:</p>
@@ -554,16 +564,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>nih_title</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [2] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [3] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
- [4] "Automated CT scan analysis could fast-track clinical assessments "                                                                
- [5] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
- [6] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            
- [7] "NIH halts arm of clinical trial evaluating a potential stroke treatment"                                                          
- [8] "Cognitive speed training over weeks may delay the diagnosis of dementia over decades "                                            
- [9] "NIH scientists develop \"digital twin\" of eye cells to understand and treat age-related macular degeneration"                    
-[10] "NIH opens East Palestine Health Research Office to study train disaster"                                                          </code></pre>
+<pre><code> [1] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
+ [2] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
+ [3] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
+ [4] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
+ [5] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
+ [6] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
+ [7] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
+ [8] "Automated CT scan analysis could fast-track clinical assessments "                                                                
+ [9] "Study measuring changes in protein structure establishes new class of Alzheimer’s biomarkers "                                    
+[10] "NIH-supported trial reduces&nbsp;HIV&nbsp;incidence by 70%&nbsp;in&nbsp;rural populations"                                                            </code></pre>
 </div>
 </div>
 </section>

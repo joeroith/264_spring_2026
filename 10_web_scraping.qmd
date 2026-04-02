@@ -120,7 +120,7 @@ Scroll through the page to verify that only the information you intend (the desc
 
 ### Retrieving Data Using `rvest` and CSS Selectors
 
-Now that we have identified CSS selectors for the information we need, let's fetch the data using the `rvest` package similarly to our approach in `10_table_scraping.qmd`.
+Now that we have identified CSS selectors for the information we need, let's fetch the data using the `rvest` package similarly to our approach in `09_table_scraping.qmd`.
 
 ```{r}
 # check that scraping is allowed (Step 0)
