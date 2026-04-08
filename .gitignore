@@ -2,16 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
-
 /.quarto/
-
 /DS2_preview_work
-
 /spring2024
-
 /SQLcode
-
 /12_strings_part3
-
 /miniproject4
 **/*.quarto_ipynb
+omdb_api_key

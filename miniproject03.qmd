@@ -1,5 +1,6 @@
 ---
 title: "Mini-Project 3: Building a Personal Quarto Webpage"
+subtitle: "Due Sunday, April 26 at 11pm"
 format:
   html: default
 ---
@@ -53,7 +54,7 @@ A few additional details for this tab:
 
 Check out this [rubric](https://drive.google.com/file/d/1Gp9wTfQ0FZbV64KW35ThE-2JAw7ceecS/view?usp=sharing) for Mini-Project 3. 
  
-Mini-Project 3 must be submitted on Moodle by **11:00 PM on Fri April 24**.  All I need is a URL for your webpage, which should then have a link to your R code in GitHub.  If you choose not to make your webpage public at this time, please add me as a collaborator to your GitHub repository so that I can see your code and generate your webpage.
+Mini-Project 3 must be submitted on Moodle by **11:00 PM on Sunday, April 26**.  All I need is a URL for your webpage, which should then have a link to your R code in GitHub.  If you choose not to make your webpage public at this time, please add me as a collaborator to your GitHub repository so that I can see your code and generate your webpage.
 
 
 ### Examples
