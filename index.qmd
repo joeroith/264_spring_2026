@@ -6,9 +6,8 @@ sidebar: false
 ::: {layout-nrow=2}
 ![](images/rstudio-stickers.jpg){width=75%}
 
-![](images/GitHub-Logo.png){width=150}
+![](images/GitHub-Logo.png){width=150} 
 :::
-
 
 # Key links for SDS 264
 

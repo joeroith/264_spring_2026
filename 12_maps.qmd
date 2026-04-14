@@ -389,7 +389,7 @@ leaflet(states) |>
 
 1. Let's return to our example from above where we recreated an [interactive choropleth map](https://rstudio.github.io/leaflet/articles/choropleths.html) of population densities by US state.  Recall how that plot was very suspicious?  The population density data that came with the state geometries from [our source](https://rstudio.github.io/leaflet/json/us-states.geojson) seemed incorrect. 
 
-In `10_table_scraping.qmd` (On Your Own #1) we went out and found the real statewise population densities (from [here](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density)) and created a tidy data frame.  Now let's merge that with our state geometry shapefiles and regenerate our interactive choropleth map.
+In `09_table_scraping.qmd` (On Your Own #1) we went out and found the real statewise population densities (from [here](https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population_density)) and created a tidy data frame.  Now let's merge that with our state geometry shapefiles and regenerate our interactive choropleth map.
 
 ```{r}
 # Code from OYO #1 in 09_table_scraping.qmd
