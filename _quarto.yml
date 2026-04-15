@@ -55,6 +55,7 @@ website:
         - 10_web_scraping.qmd
         - 11_apis.qmd
         - 12_maps.qmd
+        - 13_first_shiny_instructions.qmd
         
     - id: projects
       title: "Projects"
