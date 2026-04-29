@@ -47,7 +47,7 @@ Column {data-width = 200}
 -------------------------
 
 ```{r  fig.width = 4, fig.height = 4}
-include_graphics("Colorado1.jpg") 
+include_graphics("C:\\Users\\roith1\\Documents\\R\\SDS264\\264_spring_2026\\Ames_example\\images\\Colorado1.jpg") 
 ```
 
 

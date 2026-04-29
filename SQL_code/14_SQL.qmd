@@ -18,7 +18,7 @@ editor_options:
 #| knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2025/blob/main/SQL_code/15_SQL.qmd).  Just hit the Download Raw File button.
+You can download this .qmd file from [here](https://github.com/joeroith/264_spring_2026/blob/main/SQL_code/14_SQL.qmd).  Just hit the Download Raw File button.
 
 In this activity, we will follow closely to Ch 15 in MDSR.  When doing database queries I often allow chunk output to occur inline.
 

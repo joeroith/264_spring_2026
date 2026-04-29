@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Web Scraping in R – SDS 264: Data Science 2</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -67,15 +70,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4f3ce93296b37b01cb716841ae24fd76.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a16ec5cfd8a29efc094c7ea0c2b5e96b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,8 +117,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">SDS 264: Data Science 2</span>
     </a>
@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -215,6 +215,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./13_first_shiny_instructions.html">
  <span class="dropdown-text">First Shiny instructions</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./15_SQL_exercises.html">
+ <span class="dropdown-text">SQL: Exercises</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -265,10 +269,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
-      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -353,6 +353,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./13_first_shiny_instructions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First Shiny instructions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_SQL_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SQL: Exercises</span></a>
   </div>
 </li>
     </ul>
@@ -528,16 +534,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>title_temp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{xml_nodeset (10)}
- [1] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH-funded breakthrough shrinks CR ...
- [2] &lt;h3 class="thumbnail-teaser__heading"&gt;Low-cost care model reduces blood  ...
- [3] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH researchers&nbsp;discover&nbsp;pain-reli ...
- [4] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH awards&nbsp;top&nbsp;scientific teams fo ...
- [5] &lt;h3 class="thumbnail-teaser__heading"&gt;Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH  ...
- [6] &lt;h3 class="thumbnail-teaser__heading"&gt;Chronic inflammation leaves long-l ...
- [7] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH&nbsp;invests $150 million in human- ...
- [8] &lt;h3 class="thumbnail-teaser__heading"&gt;Clinical trial results support use ...
- [9] &lt;h3 class="thumbnail-teaser__heading"&gt;Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;pre ...
-[10] &lt;h3 class="thumbnail-teaser__heading"&gt;Automated CT scan analysis could f ...</code></pre>
+ [1] &lt;h3 class="thumbnail-teaser__heading"&gt;Symptom-based approach treats opio ...
+ [2] &lt;h3 class="thumbnail-teaser__heading"&gt;Clinical trial finds no difference ...
+ [3] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH-funded AI model predicts cance ...
+ [4] &lt;h3 class="thumbnail-teaser__heading"&gt;Dr. Jonathan M. Green selected as  ...
+ [5] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH-funded breakthrough shrinks CR ...
+ [6] &lt;h3 class="thumbnail-teaser__heading"&gt;Low-cost care model reduces blood  ...
+ [7] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH researchers&nbsp;discover&nbsp;pain-reli ...
+ [8] &lt;h3 class="thumbnail-teaser__heading"&gt;NIH awards&nbsp;top&nbsp;scientific teams fo ...
+ [9] &lt;h3 class="thumbnail-teaser__heading"&gt;Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH  ...
+[10] &lt;h3 class="thumbnail-teaser__heading"&gt;Chronic inflammation leaves long-l ...</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Extract content from nodes with html_text(), html_name(), </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#    html_attrs(), html_children(), html_table(), etc.</span></span>
@@ -545,16 +551,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>title_vec <span class="ot">&lt;-</span> <span class="fu">html_text</span>(title_temp)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>title_vec</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                                                        
- [2] "Low-cost care model reduces blood pressure in high-risk populations "                                                             
- [3] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
- [4] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
- [5] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
- [6] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
- [7] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [8] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [9] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
-[10] "Automated CT scan analysis could fast-track clinical assessments "                                                                </code></pre>
+<pre><code> [1] "Symptom-based approach treats opioid withdrawal in newborns with minimal drug exposure "                 
+ [2] "Clinical trial finds no difference in fluid treatment options for pediatric sepsis "                     
+ [3] "NIH-funded AI model predicts cancer survival from single-cell tumor data&nbsp;"                               
+ [4] "Dr. Jonathan M. Green selected as CEO of the NIH Clinical Center "                                       
+ [5] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                               
+ [6] "Low-cost care model reduces blood pressure in high-risk populations "                                    
+ [7] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                          
+ [8] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"               
+ [9] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                       
+[10] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"</code></pre>
 </div>
 </div>
 <p>You can also write this all together with a pipe:</p>
@@ -571,16 +577,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_nodes</span>(<span class="st">".thumbnail-teaser__heading"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                                                        
- [2] "Low-cost care model reduces blood pressure in high-risk populations "                                                             
- [3] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
- [4] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
- [5] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
- [6] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
- [7] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [8] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [9] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
-[10] "Automated CT scan analysis could fast-track clinical assessments "                                                                </code></pre>
+<pre><code> [1] "Symptom-based approach treats opioid withdrawal in newborns with minimal drug exposure "                 
+ [2] "Clinical trial finds no difference in fluid treatment options for pediatric sepsis "                     
+ [3] "NIH-funded AI model predicts cancer survival from single-cell tumor data&nbsp;"                               
+ [4] "Dr. Jonathan M. Green selected as CEO of the NIH Clinical Center "                                       
+ [5] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                               
+ [6] "Low-cost care model reduces blood pressure in high-risk populations "                                    
+ [7] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                          
+ [8] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"               
+ [9] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                       
+[10] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"</code></pre>
 </div>
 </div>
 <p>And finally we wrap the 4 steps above into the <code>bow</code> and <code>scrape</code> functions from the <code>polite</code> package:</p>
@@ -592,16 +598,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">html_text</span>()</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>nih_title</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                                                        
- [2] "Low-cost care model reduces blood pressure in high-risk populations "                                                             
- [3] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                                                   
- [4] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"                                        
- [5] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                                                
- [6] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"                         
- [7] "NIH&nbsp;invests $150 million in human-based research to reduce&nbsp;use of&nbsp;animal&nbsp;models&nbsp;"                                                 
- [8] "Clinical trial results support use of weekly extended-release buprenorphine for treatment of opioid use disorder during pregnancy"
- [9] "Researchers&nbsp;develop&nbsp;AI&nbsp;tool&nbsp;to&nbsp;predict&nbsp;patients at&nbsp;risk of&nbsp;intimate&nbsp;partner&nbsp;violence&nbsp;&nbsp;"                                           
-[10] "Automated CT scan analysis could fast-track clinical assessments "                                                                </code></pre>
+<pre><code> [1] "Symptom-based approach treats opioid withdrawal in newborns with minimal drug exposure "                 
+ [2] "Clinical trial finds no difference in fluid treatment options for pediatric sepsis "                     
+ [3] "NIH-funded AI model predicts cancer survival from single-cell tumor data&nbsp;"                               
+ [4] "Dr. Jonathan M. Green selected as CEO of the NIH Clinical Center "                                       
+ [5] "NIH-funded breakthrough shrinks CRISPR for precision delivery in the body"                               
+ [6] "Low-cost care model reduces blood pressure in high-risk populations "                                    
+ [7] "NIH researchers&nbsp;discover&nbsp;pain-relieving&nbsp;drug&nbsp;with&nbsp;minimal addictive properties"                          
+ [8] "NIH awards&nbsp;top&nbsp;scientific teams for innovations linking nutrition and autoimmune disease&nbsp;"               
+ [9] "Dr. Elisabeth Armstrong&nbsp;named&nbsp;NIH Chief of Staff&nbsp;"                                                       
+[10] "Chronic inflammation leaves long-lasting impression on gut stem cells, increasing colorectal cancer risk"</code></pre>
 </div>
 </div>
 </section>

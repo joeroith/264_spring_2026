@@ -10,3 +10,4 @@
 /miniproject4
 **/*.quarto_ipynb
 omdb_api_key
+.positai

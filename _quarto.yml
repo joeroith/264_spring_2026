@@ -56,6 +56,7 @@ website:
         - 11_apis.qmd
         - 12_maps.qmd
         - 13_first_shiny_instructions.qmd
+        - 15_SQL_exercises.qmd
         
     - id: projects
       title: "Projects"
