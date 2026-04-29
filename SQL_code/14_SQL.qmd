@@ -209,7 +209,7 @@ LIMIT 0, 10;
 
 ### Section 15.4.1: SELECT...FROM
 
-Be sure to set limit so it doesn't run forever
+Be sure to set limit so it doesn't run forever. What do you think the 0 and 100 mean?
 
 ```{sql, connection = con}
 SELECT origin origincityname FROM flightdata
@@ -226,7 +226,7 @@ FROM flightdata
 LIMIT 0, 6;
 ```
 
-Make (origin, dest) column name less unwieldy but changing column names in resulting data set
+Make (origin, dest) column name less unwieldy by changing column names in resulting data set
 
 ```{sql, connection = con}
 SELECT 
@@ -291,14 +291,14 @@ WHERE Year = 2019 AND Month = 6 AND DayofMonth IN (26, 30)
 LIMIT 0, 6;
 ```
 
-Be careful with parentheses.  If run the code below without parentheses, you'll probably crash R, as it tries to return a ton of records. Do NOT try this at home! 
+Be careful with parentheses when using OR.  If you run the code below without parentheses, you'll probably crash R, as it tries to return a ton of records. Do NOT try this at home! 
 
 ```{sql, connection = con}
-/* returns 154 records  */
+/* takes long time, returns 3194 records  */
 SELECT 
   COUNT(*) AS N
 FROM flightdata
-WHERE Year = 2019 AND Month = 6 AND DayofMonth IN (26, 30)
+WHERE Year = 2019 AND (Month = 6 OR DayofMonth = 26)
   AND origin = 'BDL'
 ```
 
@@ -317,7 +317,7 @@ WHERE Year = 2019 AND Month = 6 AND DayofMonth = 26
 GROUP BY carrier;
 ```
 
-Add MIN as an aggregate function
+Add MIN as an aggregate function - what is the earliest flight?
 
 ```{sql, connection = con}
 SELECT 
@@ -336,13 +336,13 @@ Turn departure time variable into an actual time
 SELECT 
   Reporting_Airline AS carrier, 
   COUNT(*) AS numFlights,
-  MAKETIME(
+  MAKETIME(                       -- new function
     IF(LENGTH(MIN(deptime)) = 3, 
-      LEFT(MIN(deptime), 1), 
-      LEFT(MIN(deptime), 2)
+      LEFT(MIN(deptime), 1),      -- 1 digit hour if length true
+      LEFT(MIN(deptime), 2)       -- 2 digit hour if false
     ), 
-    RIGHT(MIN(deptime), 2), 
-    0
+    RIGHT(MIN(deptime), 2),       -- minutes always 2 rightmost digits
+    0                             -- seconds
     ) AS firstDepartureTime
 FROM flightdata
 WHERE Year = 2019 AND Month = 6 AND DayofMonth = 26
@@ -425,7 +425,7 @@ LIMIT 0, 6;
 
 ### Section 15.4.6: LIMIT
 
-We've been using LIMIT often to reduce what is returned/printed.  The code below returns the 4th through 7th airports in our list
+We've been using LIMIT often to reduce what is returned/printed.  The code below returns the 4th through 7th airports in our list. LIMIT [offset optional], number of rows.
 
 ```{sql, connection = con}
 SELECT 
@@ -496,7 +496,7 @@ Join in carrier info as well
 #JOIN carriers AS c ON o.carrier = c.carrier
 #WHERE year = 2013 AND month = 6 AND day = 26
 #  AND origin = 'BDL'
-#IMIT 0, 6;
+#LIMIT 0, 6;
 ```
 
 Join onto same table more than once to get both airports.  
@@ -510,7 +510,7 @@ See book for nice discussion about why it's much more efficient to store things 
 #  a1.name AS dest_name,
 #  c.name AS carrier_name
 #FROM flights AS o
-#OIN airports AS a1 ON o.dest = a1.faa
+#JOIN airports AS a1 ON o.dest = a1.faa
 #JOIN airports AS a2 ON o.origin = a2.faa
 #JOIN carriers AS c ON o.carrier = c.carrier
 #WHERE year = 2013 AND month = 6 AND day = 26
